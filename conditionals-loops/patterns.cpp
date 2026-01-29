@@ -75,6 +75,143 @@ void rightTriangle5(int &n)
     }
 }
 
+void alphaSquare1(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n; col++)
+        {
+            char ch = 'A' + row - 1;
+            cout << ch << " ";
+        }
+        cout << '\n';
+    }
+}
+
+void alphaSquare2(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n; col++)
+        {
+            char ch = 'A' + col - 1;
+            cout << ch << " ";
+        }
+        cout << '\n';
+    }
+}
+
+void alphaSquare3(int &n)
+{
+    char ch = 'A';
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n; col++)
+        {
+            cout << ch << " ";
+            ch++;
+        }
+        cout << '\n';
+    }
+}
+
+void alphaSquare4(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n; col++)
+        {
+            char ch = 'A' + row + col - 2;
+            cout << ch << " ";
+        }
+        cout << '\n';
+    }
+}
+
+void rightTriangle6(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n - row; col++)
+        {
+            cout << " ";
+        }
+        for (int col = 1; col <= row; col++)
+        {
+            cout << "*";
+        }
+        cout << '\n';
+    }
+}
+
+void rightTriangle7(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n - row + 1; col++)
+        {
+            cout << "*";
+        }
+        cout << '\n';
+    }
+}
+
+void rightTriangle8(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= row - 1; col++)
+        {
+            cout << " ";
+        }
+        for (int col = 1; col <= n - row + 1; col++)
+        {
+            cout << "*";
+        }
+        cout << '\n';
+    }
+}
+
+void pyramid1(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n - row; col++)
+        {
+            cout << " ";
+        }
+        for (int col = 1; col <= row; col++)
+        {
+            cout << col;
+        }
+        for (int col = row - 1; col > 0; col--)
+        {
+            cout << col;
+        }
+        cout << '\n';
+    }
+}
+
+void pyramid2(int &n)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        for (int col = 1; col <= n - row + 1; col++)
+        {
+            cout << col << " ";
+        }
+        for (int col = 1; col <= 2 * row - 2; col++)
+        {
+            cout << "*" << " ";
+        }
+        for (int col = n - row + 1; col > 0; col--)
+        {
+            cout << col << " ";
+        }
+        cout << '\n';
+    }
+}
+
 int main()
 {
     int n;
@@ -86,5 +223,14 @@ int main()
     rightTriangle3(n);
     rightTriangle4(n);
     rightTriangle5(n);
+    alphaSquare1(n);
+    alphaSquare2(n);
+    alphaSquare3(n);
+    alphaSquare4(n);
+    rightTriangle6(n);
+    rightTriangle7(n);
+    rightTriangle8(n);
+    pyramid1(n);
+    pyramid2(n);
     return 0;
 }
