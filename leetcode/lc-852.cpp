@@ -57,7 +57,7 @@ int peakIndexUsingBinarySearch(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {19, 26, 34, 22, 10, 0};
+    vector<int> arr = {9, 16, 20, 22, 31, 44};
     cout << "\nPeak element is at index : " << peakIndexBruteForceSolution(arr);
     cout << "\nPeak element is at index : " << peakIndexUsingBinarySearch(arr);
     return 0;
