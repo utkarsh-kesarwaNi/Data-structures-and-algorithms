@@ -40,7 +40,7 @@ int findPivotIndex(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {11, 12, 14, 17, 18, 20, 5, 6};
+    vector<int> arr = {11, 12, 14, 17, 18, 20, 25, 6};
     cout << "Number of rotations in arr : " << findPivotIndex(arr);
     return 0;
 }
