@@ -65,4 +65,5 @@ int main()
 {
     vector<int> arr = {40, 20, 30, 10};
     cout << findMinPages(arr, 2);
+    return 0;
 }
