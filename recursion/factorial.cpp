@@ -39,10 +39,46 @@ int factorial(int n)
     return n * factorial(n - 1);
 }
 
+/**
+ * Tail recursion is a specialized form of recursion where the recursive function call is the absolute final instruction executed in the function.
+ */
+
+int factorialUsingTailRecursion(int n, int result)
+{
+    if (n <= 1)
+    {
+        return result;
+    }
+    /**
+     * RECURSIVE STEP (Tail Position)
+     * n = 3, result = 1
+     *
+     * factorialUsingTailRecursion(3, 1) is called.
+     * It calculates the new state for the next call: next_n = 2, next_result = 3 * 1 = 3.
+     *
+     * Notice: There is NO WORK left to do after the recursive call returns.
+     * It is just returning the result of the next function call directly.
+     *
+     * Under the hood (Tail Call Optimization / Stack Frame Reuse):
+     * - factorialUsingTailRecursion(3, 1) does NOT pause and push a new frame onto the stack.
+     * - Instead, the compiler overwrites the current variables and JUMPS back to the start as factorialUsingTailRecursion(2, 3).
+     * - factorialUsingTailRecursion(2, 3) overwrites its variables and JUMPS back as factorialUsingTailRecursion(1, 6).
+     * - factorialUsingTailRecursion(1, 6) hits the base case and returns 6.
+     *
+     * Stack Unwinding (Optimized):
+     * - Because of Tail Call Optimization, there is NO cascading stack to unwind!
+     * - The memory footprint remained at exactly 1 stack frame the entire time.
+     * - The value 6 is returned directly to the original caller (main).
+     */
+    return factorialUsingTailRecursion(n - 1, result * n);
+}
+
 int main()
 {
     int n;
+    int result = 1;
     cin >> n;
-    cout << factorial(n);
+    cout << factorial(n) << '\n';
+    cout << factorialUsingTailRecursion(n, result) << '\n';
     return 0;
 }
